@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos - Página Docente</title>
+    <!-- Cargar la fuente Roboto Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto+Slab:ital,wght@1,400&display=swap" rel="stylesheet">
     <style>
         /* Estilos generales con Roboto Mono */
         body {
@@ -18,27 +19,103 @@
             line-height: 1.6;
         }
 
-        /* Encabezado */
+        /* Header con fondo de gradiente animado y borde pulsante */
         header {
-            background: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(135deg, #1f1c2c, #80d0c7, #4e4376);
+            background-size: 200% 200%;
+            animation: gradientShift 5s ease infinite;
             text-align: center;
-            padding: 1.5rem;
-            border-bottom: 2px solid #80d0c7;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: #80d0c7;
+            font-size: 3rem;
+            color: #ffffff;
             margin: 0;
             font-weight: 700;
+            text-shadow: 0 0 10px #80d0c7, 0 0 20px #80d0c7, 0 0 30px #4e4376;
         }
 
-        /* Mensaje de Bienvenida */
+        header::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #80d0c7, transparent);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; }
+        }
+
+        /* Estilo del mensaje de bienvenida mejorado */
         .welcome-message {
             text-align: center;
             padding: 2rem;
-            font-size: 1.1rem;
-            color: #cfd8dc;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 800px;
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #e0e0e0;
+            background: rgba(128, 208, 199, 0.1);
+            border-radius: 10px;
+            border: 2px solid #80d0c7;
+            box-shadow: 0px 4px 15px rgba(128, 208, 199, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease;
+        }
+
+        /* Efecto de borde resplandeciente */
+        .welcome-message::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 10px;
+            border: 2px solid #80d0c7;
+            filter: blur(8px);
+            opacity: 0.6;
+            animation: borderGlow 3s infinite linear;
+        }
+
+        @keyframes borderGlow {
+            0% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 0.4; transform: scale(1); }
+        }
+
+        /* Animación de aparición suave del texto */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Efecto de ligero cambio de tono en el texto */
+        .welcome-message p {
+            animation: colorGlow 2s infinite alternate;
+        }
+
+        @keyframes colorGlow {
+            from { color: #e0e0e0; }
+            to { color: #80d0c7; }
         }
 
         /* Menú de navegación */
@@ -46,27 +123,29 @@
             list-style-type: none;
             padding: 0;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.6);
-            margin: 1rem 0;
-            padding: 1rem;
-            border-radius: 10px;
+            margin: 1.5rem 0;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            display: inline-block;
+            margin: 0 10px;
         }
 
         nav ul li a {
             color: #80d0c7;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            transition: color 0.3s ease;
+            transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
         }
 
         nav ul li a:hover {
-            color: #fbd786;
+            color: #ffffff;
+            background: #80d0c7;
+            box-shadow: 0px 0px 10px 4px #80d0c7;
         }
 
         /* Sección Principal */
@@ -104,7 +183,6 @@
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Icono de la Tarjeta */
         .card-icon {
             font-size: 3rem;
             color: #80d0c7;
@@ -112,7 +190,6 @@
             flex-shrink: 0;
         }
 
-        /* Texto en la Tarjeta */
         .card-content {
             color: #cfd8dc;
         }
@@ -135,10 +212,10 @@
 
     <!-- Encabezado -->
     <header>
-        <h1>Bienvenidos a la Página Docente de Alejandro José Torres Huelva</h1>
+        <h1>Página Docente de Alejandro José Torres Huelva</h1>
     </header>
 
-    <!-- Mensaje de Bienvenida -->
+    <!-- Mensaje de Bienvenida Mejorado -->
     <section class="welcome-message">
         <p>Bienvenidos a mi sitio web de contenido docente. Soy Alejandro José Torres Huelva, Profesor de Informática, y en esta página encontrarás material y recursos teóricos organizados por asignaturas.</p>
     </section>
@@ -156,7 +233,7 @@
     <!-- Sección Principal -->
     <main>
         <h2>Contenido de los Módulos</h2>
-        
+
         <!-- Tarjetas de cada Módulo -->
         <section id="modulo1" class="card">
             <div class="card-icon">💻</div>
