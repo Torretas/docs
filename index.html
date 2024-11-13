@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos - Página Docente</title>
-    <!-- Cargar la fuente Latin Modern para un estilo similar a LaTeX -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilo general con la fuente Latin Modern */
+        /* Estilos generales con Roboto Mono */
         body {
-            font-family: 'Latin Modern Roman', serif;
-            background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: #2e2e2e;
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #1f1c2c, #4e4376);
+            color: #e0e0e0;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         /* Encabezado */
@@ -28,7 +27,7 @@
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #80d0c7;
             margin: 0;
             font-weight: 700;
@@ -39,10 +38,10 @@
             text-align: center;
             padding: 2rem;
             font-size: 1.1rem;
-            color: #4e4e4e;
+            color: #cfd8dc;
         }
 
-        /* Menú de Navegación */
+        /* Menú de navegación */
         nav ul {
             list-style-type: none;
             padding: 0;
@@ -62,8 +61,8 @@
             color: #80d0c7;
             text-decoration: none;
             font-weight: 700;
+            font-size: 1.1rem;
             transition: color 0.3s ease;
-            font-size: 1.05rem;
         }
 
         nav ul li a:hover {
@@ -75,33 +74,60 @@
             padding: 2rem;
             width: 80%;
             margin: auto;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
             text-align: center;
         }
 
         main h2 {
             color: #80d0c7;
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
+            margin-bottom: 2rem;
         }
 
-        /* Estilo de las secciones */
-        section {
-            margin-top: 1.5rem;
+        /* Estilos de las Tarjetas de los Módulos */
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            margin: 1rem auto;
+            width: 90%;
+            max-width: 600px;
         }
 
-        section h3 {
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Icono de la Tarjeta */
+        .card-icon {
+            font-size: 3rem;
             color: #80d0c7;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-top: 1rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
         }
 
-        section p {
-            font-size: 1.1rem;
-            color: #4e4e4e;
+        /* Texto en la Tarjeta */
+        .card-content {
+            color: #cfd8dc;
+        }
+
+        .card-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            color: #80d0c7;
+            font-weight: 700;
+        }
+
+        .card-content p {
+            margin: 0;
+            font-size: 1rem;
         }
     </style>
 </head>
@@ -130,24 +156,38 @@
     <!-- Sección Principal -->
     <main>
         <h2>Contenido de los Módulos</h2>
-        <section id="modulo1">
-            <h3>Módulo 1: Programación</h3>
-            <p>Aquí encontrarás teoría y práctica sobre fundamentos de programación, estructuras de control, y desarrollo de algoritmos.</p>
+        
+        <!-- Tarjetas de cada Módulo -->
+        <section id="modulo1" class="card">
+            <div class="card-icon">💻</div>
+            <div class="card-content">
+                <h3>Módulo 1: Programación</h3>
+                <p>Aquí encontrarás teoría y práctica sobre fundamentos de programación, estructuras de control, y desarrollo de algoritmos.</p>
+            </div>
         </section>
 
-        <section id="modulo2">
-            <h3>Módulo 2: Desarrollo de Aplicaciones</h3>
-            <p>Este módulo cubre el desarrollo de aplicaciones móviles y web, con un enfoque en Android, Jetpack Compose y otras tecnologías de UI.</p>
+        <section id="modulo2" class="card">
+            <div class="card-icon">📱</div>
+            <div class="card-content">
+                <h3>Módulo 2: Desarrollo de Aplicaciones</h3>
+                <p>Este módulo cubre el desarrollo de aplicaciones móviles y web, con un enfoque en Android, Jetpack Compose y otras tecnologías de UI.</p>
+            </div>
         </section>
 
-        <section id="modulo3">
-            <h3>Módulo 3: Bases de Datos</h3>
-            <p>Explora conceptos sobre bases de datos relacionales y no relacionales, consultas SQL, modelado de datos y administración de bases de datos.</p>
+        <section id="modulo3" class="card">
+            <div class="card-icon">🗄️</div>
+            <div class="card-content">
+                <h3>Módulo 3: Bases de Datos</h3>
+                <p>Explora conceptos sobre bases de datos relacionales y no relacionales, consultas SQL, modelado de datos y administración de bases de datos.</p>
+            </div>
         </section>
 
-        <section id="modulo4">
-            <h3>Módulo 4: Redes y Seguridad</h3>
-            <p>Sección dedicada a redes de computadoras, protocolos de comunicación, y principios básicos de seguridad informática.</p>
+        <section id="modulo4" class="card">
+            <div class="card-icon">🔐</div>
+            <div class="card-content">
+                <h3>Módulo 4: Redes y Seguridad</h3>
+                <p>Sección dedicada a redes de computadoras, protocolos de comunicación, y principios básicos de seguridad informática.</p>
+            </div>
         </section>
     </main>
 
