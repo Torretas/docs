@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenidos - Página Docente</title>
+    <!-- Cargar la fuente Latin Modern para un estilo similar a LaTeX -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Latin+Modern+Roman:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos de Fuente y Fondo */
+        /* Estilo general con la fuente Latin Modern */
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Latin Modern Roman', serif;
             background: linear-gradient(135deg, #1f1c2c, #928dab);
-            color: #e0e0e0;
+            color: #2e2e2e;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         /* Encabezado */
@@ -27,17 +28,18 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #80d0c7;
             margin: 0;
-            text-shadow: 1px 1px 2px #000;
+            font-weight: 700;
         }
 
         /* Mensaje de Bienvenida */
         .welcome-message {
             text-align: center;
             padding: 2rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #4e4e4e;
         }
 
         /* Menú de Navegación */
@@ -59,8 +61,9 @@
         nav ul li a {
             color: #80d0c7;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 700;
             transition: color 0.3s ease;
+            font-size: 1.05rem;
         }
 
         nav ul li a:hover {
@@ -80,6 +83,25 @@
 
         main h2 {
             color: #80d0c7;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        /* Estilo de las secciones */
+        section {
+            margin-top: 1.5rem;
+        }
+
+        section h3 {
+            color: #80d0c7;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        section p {
+            font-size: 1.1rem;
+            color: #4e4e4e;
         }
     </style>
 </head>
